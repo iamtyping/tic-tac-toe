@@ -52,4 +52,14 @@ public class Board {
 
         return new Combination(colSymbols);
     }
+
+    public Combination getPrimaryDiagonal(){
+        CellMark[] symbols = new CellMark[size];
+
+        for (int i = 0; i < size; i++) {
+            symbols[i] = getCell(i, i);
+        }
+
+        return new Combination(symbols);
+    }
 }

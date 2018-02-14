@@ -106,4 +106,23 @@ class BoardTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void whenGettingPrimaryDiagonalCombination_thenCombinationIsCorrect(){
+        Board board = new Board();
+
+        CellMark[] cells = new CellMark[] {CellMark.X, CellMark.O, CellMark.X};
+
+        for (int i = 0; i < board.getSize(); i++) {
+            if (cells[i] == CellMark.X)
+                board.setX(i, i);
+            else
+                board.setO(i, i);
+        }
+
+        Combination actual = board.getPrimaryDiagonal();
+        Combination expected = new Combination(cells);
+
+        assertEquals(expected, actual);
+    }
 }
