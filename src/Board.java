@@ -26,12 +26,21 @@ public class Board {
         board[row][col] = CellMark.O;
     }
 
-    public boolean isFull(){
+    public boolean isFull() {
         for (int i = 0; i < size; i++)
             for (int j = 0; j < size; j++)
                 if (board[i][j] == CellMark.EMPTY)
                     return false;
 
         return true;
+    }
+
+    public Combination getRow(int row) {
+        CellMark[] rowSymbols = new CellMark[size];
+
+        for (int col = 0; col < size; col++)
+            rowSymbols[col] = getCell(row, col);
+
+        return new Combination(rowSymbols);
     }
 }

@@ -63,4 +63,26 @@ class BoardTest {
 
         assertFalse(isFull);
     }
+
+    @Test
+    public void whenGettingRowCombination_thenCombinationIsCorrect(){
+        Board board = new Board();
+
+        CellMark[] rowCells = new CellMark[] {CellMark.X, CellMark.O, CellMark.X};
+
+        int row = 2;
+
+
+        for (int col = 0; col < board.getSize(); col++) {
+            if (rowCells[col] == CellMark.X)
+                board.setX(row, col);
+            else
+                board.setO(row, col);
+        }
+
+        Combination actual = board.getRow(row);
+        Combination expected = new Combination(rowCells);
+
+        assertEquals(expected, actual);
+    }
 }

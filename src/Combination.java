@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Combination {
     private CellMark[] values;
 
@@ -23,5 +25,18 @@ public class Combination {
             return values[0];
         }
         return null;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Combination that = (Combination) o;
+        return Arrays.equals(values, that.values);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(values);
     }
 }
