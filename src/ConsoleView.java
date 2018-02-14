@@ -9,9 +9,9 @@ public class ConsoleView {
     public void drawBoard(Board board){
         int size = board.getSize();
 
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                CellMark cell = board.getCell(i, j);
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < size; col++) {
+                CellMark cell = board.getCell(row, col);
 
                 outputStream.print(toSymbol(cell));
             }

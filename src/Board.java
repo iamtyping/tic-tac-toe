@@ -3,9 +3,9 @@ public class Board {
     private CellMark[][] board = new CellMark[size][size];
 
     public Board(){
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                board[i][j] = CellMark.EMPTY;
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < size; col++) {
+                board[row][col] = CellMark.EMPTY;
             }
         }
     }
@@ -27,9 +27,9 @@ public class Board {
     }
 
     public boolean isFull() {
-        for (int i = 0; i < size; i++)
-            for (int j = 0; j < size; j++)
-                if (board[i][j] == CellMark.EMPTY)
+        for (int row = 0; row < size; row++)
+            for (int col = 0; col < size; col++)
+                if (board[row][col] == CellMark.EMPTY)
                     return false;
 
         return true;

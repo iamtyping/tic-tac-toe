@@ -8,9 +8,9 @@ class BoardTest {
     public void whenCreating_thenBoardIsEmpty(){
         Board board = new Board();
 
-        for (int i = 0; i < board.getSize(); i++) {
-            for (int j = 0; j < board.getSize(); j++) {
-                assertEquals(CellMark.EMPTY, board.getCell(i,j));
+        for (int row = 0; row < board.getSize(); row++) {
+            for (int col = 0; col < board.getSize(); col++) {
+                assertEquals(CellMark.EMPTY, board.getCell(row, col));
             }
         }
     }
