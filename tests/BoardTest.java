@@ -65,50 +65,49 @@ class BoardTest {
     }
 
     @Test
-    public void whenGettingRowCombination_thenCombinationIsCorrect(){
+    public void whenGettingRow_thenCombinationIsCorrect(){
         Board board = new Board();
 
-        CellMark[] rowCells = new CellMark[] {CellMark.X, CellMark.O, CellMark.X};
+        CellMark[] cells = new CellMark[] {CellMark.X, CellMark.O, CellMark.X};
 
         int row = 2;
 
-
         for (int col = 0; col < board.getSize(); col++) {
-            if (rowCells[col] == CellMark.X)
+            if (cells[col] == CellMark.X)
                 board.setX(row, col);
             else
                 board.setO(row, col);
         }
 
         Combination actual = board.getRow(row);
-        Combination expected = new Combination(rowCells);
+        Combination expected = new Combination(cells);
 
         assertEquals(expected, actual);
     }
 
     @Test
-    public void whenGettingColumnCombination_thenCombinationIsCorrect(){
+    public void whenGettingColumn_thenCombinationIsCorrect(){
         Board board = new Board();
 
-        CellMark[] columnCells = new CellMark[] {CellMark.X, CellMark.O, CellMark.X};
+        CellMark[] cells = new CellMark[] {CellMark.X, CellMark.O, CellMark.X};
 
         int col = 2;
 
         for (int row = 0; row < board.getSize(); row++) {
-            if (columnCells[row] == CellMark.X)
+            if (cells[row] == CellMark.X)
                 board.setX(row, col);
             else
                 board.setO(row, col);
         }
 
         Combination actual = board.getColumn(col);
-        Combination expected = new Combination(columnCells);
+        Combination expected = new Combination(cells);
 
         assertEquals(expected, actual);
     }
 
     @Test
-    public void whenGettingPrimaryDiagonalCombination_thenCombinationIsCorrect(){
+    public void whenGettingPrimaryDiagonal_thenCombinationIsCorrect(){
         Board board = new Board();
 
         CellMark[] cells = new CellMark[] {CellMark.X, CellMark.O, CellMark.X};

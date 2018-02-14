@@ -36,21 +36,21 @@ public class Board {
     }
 
     public Combination getRow(int row) {
-        CellMark[] rowSymbols = new CellMark[size];
+        CellMark[] symbols = new CellMark[size];
 
         for (int col = 0; col < size; col++)
-            rowSymbols[col] = getCell(row, col);
+            symbols[col] = getCell(row, col);
 
-        return new Combination(rowSymbols);
+        return new Combination(symbols);
     }
 
     public Combination getColumn(int col) {
-        CellMark[] colSymbols = new CellMark[size];
+        CellMark[] symbols = new CellMark[size];
 
         for (int row = 0; row < size; row++)
-            colSymbols[row] = getCell(row, col);
+            symbols[row] = getCell(row, col);
 
-        return new Combination(colSymbols);
+        return new Combination(symbols);
     }
 
     public Combination getPrimaryDiagonal(){
