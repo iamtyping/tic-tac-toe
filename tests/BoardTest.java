@@ -85,4 +85,25 @@ class BoardTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void whenGettingColumnCombination_thenCombinationIsCorrect(){
+        Board board = new Board();
+
+        CellMark[] columnCells = new CellMark[] {CellMark.X, CellMark.O, CellMark.X};
+
+        int col = 2;
+
+        for (int row = 0; row < board.getSize(); row++) {
+            if (columnCells[row] == CellMark.X)
+                board.setX(row, col);
+            else
+                board.setO(row, col);
+        }
+
+        Combination actual = board.getColumn(col);
+        Combination expected = new Combination(columnCells);
+
+        assertEquals(expected, actual);
+    }
 }

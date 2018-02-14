@@ -43,4 +43,13 @@ public class Board {
 
         return new Combination(rowSymbols);
     }
+
+    public Combination getColumn(int col) {
+        CellMark[] colSymbols = new CellMark[size];
+
+        for (int row = 0; row < size; row++)
+            colSymbols[row] = getCell(row, col);
+
+        return new Combination(colSymbols);
+    }
 }
