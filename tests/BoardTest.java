@@ -124,4 +124,25 @@ class BoardTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void whenGettingSecondaryDiagonal_thenCombinationIsCorrect(){
+        Board board = new Board();
+
+        CellMark[] cells = new CellMark[] {CellMark.X, CellMark.O, CellMark.X};
+
+        for (int row = 0; row < board.getSize(); row++) {
+            int col = board.getSize() - row - 1;
+
+            if (cells[row] == CellMark.X)
+                board.setX(row, col);
+            else
+                board.setO(row, col);
+        }
+
+        Combination actual = board.getSecondaryDiagonal();
+        Combination expected = new Combination(cells);
+
+        assertEquals(expected, actual);
+    }
 }

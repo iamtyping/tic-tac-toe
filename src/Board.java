@@ -53,12 +53,21 @@ public class Board {
         return new Combination(symbols);
     }
 
-    public Combination getPrimaryDiagonal(){
+    public Combination getPrimaryDiagonal() {
         CellMark[] symbols = new CellMark[size];
 
         for (int i = 0; i < size; i++) {
             symbols[i] = getCell(i, i);
         }
+
+        return new Combination(symbols);
+    }
+
+    public Combination getSecondaryDiagonal() {
+        CellMark[] symbols = new CellMark[size];
+
+        for (int i = 0; i < size; i++)
+            symbols[i] = getCell(i, size - i - 1);
 
         return new Combination(symbols);
     }
