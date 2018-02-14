@@ -17,4 +17,11 @@ public class Combination {
 
         return true;
     }
+
+    public CellMark getWinner(){
+        if (isWinning()){
+            return values[0];
+        }
+        return null;
+    }
 }
