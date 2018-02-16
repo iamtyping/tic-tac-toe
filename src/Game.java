@@ -15,6 +15,10 @@ public class Game {
             board.setO(move.getRow(), move.getCol());
     }
 
+    public boolean canMakeMove(int row, int col) {
+        return board.getCell(row, col) == CellMark.EMPTY;
+    }
+
     public GameState getState() {
         for (Combination combination : collectCombinations()) {
             if (combination.isWinning())
