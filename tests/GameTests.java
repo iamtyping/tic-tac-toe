@@ -72,6 +72,18 @@ public class GameTests {
         assertEquals(GameState.OWon, state);
     }
 
+    @Test
+    public void whenMakingMove_thenBoardReflectsIt(){
+        Board board = new Board();
+        Game game = new Game(board);
+
+        game.makeMove(new Move(Player.X, 1, 1));
+
+        CellMark actual = board.getCell(1, 1);
+
+        assertEquals(CellMark.X, actual);
+    }
+
     private Board createBoard(CellMark[][] cells) {
         Board board = new Board();
 
