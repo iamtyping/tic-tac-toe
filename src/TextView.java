@@ -1,9 +1,8 @@
-import java.io.PrintStream;
+public class TextView {
+    private TextDevice textDevice;
 
-public class ConsoleView {
-
-    public ConsoleView(PrintStream outputStream){
-        this.outputStream = outputStream;
+    public TextView(TextDevice device){
+        this.textDevice = device;
     }
 
     public void drawBoard(Board board){
@@ -13,15 +12,17 @@ public class ConsoleView {
             for (int col = 0; col < size; col++) {
                 CellMark cell = board.getCell(row, col);
 
-                outputStream.print(toSymbol(cell));
+                textDevice.print(toSymbol(cell));
             }
 
-            outputStream.println();
+            textDevice.print("\n");
         }
+
+        System.out.println();
     }
 
     private String toSymbol(CellMark cell) {
-        switch(cell){
+        switch (cell) {
             case X:
                 return "X";
             case O:
@@ -32,6 +33,4 @@ public class ConsoleView {
 
         return null;
     }
-
-    private PrintStream outputStream;
 }
