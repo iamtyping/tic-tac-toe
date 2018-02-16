@@ -8,6 +8,17 @@ public class Game {
         this.board = board;
     }
 
+    public void makeMove(Move move){
+        if (move.getPlayer() == Player.X)
+            board.setX(move.getRow(), move.getCol());
+        else
+            board.setO(move.getRow(), move.getCol());
+    }
+
+    public boolean canMakeMove(int row, int col) {
+        return board.getCell(row, col) == CellMark.EMPTY;
+    }
+
     public GameState getState() {
         for (Combination combination : collectCombinations()) {
             if (combination.isWinning())

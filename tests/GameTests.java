@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GameTests {
     @Test
@@ -70,6 +70,40 @@ public class GameTests {
         GameState state = game.getState();
 
         assertEquals(GameState.OWon, state);
+    }
+
+    @Test
+    public void whenMakingMove_thenBoardReflectsIt(){
+        Board board = new Board();
+        Game game = new Game(board);
+
+        game.makeMove(new Move(Player.X, 1, 1));
+
+        CellMark actual = board.getCell(1, 1);
+
+        assertEquals(CellMark.X, actual);
+    }
+
+    @Test
+    public void whenBoardCellIsEmpty_thenCanMakeMove(){
+        Board board = new Board();
+        Game game = new Game(board);
+
+        boolean canMakeMove = game.canMakeMove(1, 1);
+
+        assertTrue(canMakeMove);
+    }
+
+    @Test
+    public void whenBoardCellIsSet_thenCanNotMakeMove(){
+        Board board = new Board();
+        Game game = new Game(board);
+
+        game.makeMove(new Move(Player.O, 0, 0));
+
+        boolean canMakeMove = game.canMakeMove(0, 0);
+
+        assertFalse(canMakeMove);
     }
 
     private Board createBoard(CellMark[][] cells) {
