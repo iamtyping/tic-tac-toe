@@ -1,4 +1,4 @@
-package view.fx;
+package com.tictactoe.view.fx;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

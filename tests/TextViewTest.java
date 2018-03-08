@@ -1,3 +1,6 @@
+import com.tictactoe.Board;
+import com.tictactoe.TextDevice;
+import com.tictactoe.TextView;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -41,7 +44,7 @@ class TextViewTest {
         assertEquals(expected, actual);
     }
 
-    class TestTextDevice implements TextDevice{
+    class TestTextDevice implements TextDevice {
         String state = "";
 
         @Override

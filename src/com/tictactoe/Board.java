@@ -1,3 +1,5 @@
+package com.tictactoe;
+
 public class Board {
     private final int size = 3;
     private CellMark[][] board = new CellMark[size][size];

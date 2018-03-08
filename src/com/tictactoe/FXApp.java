@@ -1,6 +1,8 @@
+package com.tictactoe;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
-import view.fx.FxView;
+import com.tictactoe.view.fx.FxView;
 
 public class FXApp extends Application  {
     private int size = 3;

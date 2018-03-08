@@ -1,3 +1,5 @@
+package com.tictactoe;
+
 import java.util.Arrays;
 
 public class Combination {

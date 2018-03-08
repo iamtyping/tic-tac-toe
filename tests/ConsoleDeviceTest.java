@@ -1,3 +1,5 @@
+import com.tictactoe.ConsoleDevice;
+import com.tictactoe.TextDevice;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -13,10 +15,10 @@ class ConsoleDeviceTest {
         System.setOut(printStream);
 
         TextDevice cw = new ConsoleDevice();
-        cw.print("Program output");
+        cw.print("com.tictactoe.Program output");
 
         String actual = new String(stream.toByteArray());
 
-        assertEquals("Program output", actual);
+        assertEquals("com.tictactoe.Program output", actual);
     }
 }

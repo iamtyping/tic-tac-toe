@@ -1,3 +1,6 @@
+import com.tictactoe.Board;
+import com.tictactoe.CellMark;
+import com.tictactoe.Combination;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
